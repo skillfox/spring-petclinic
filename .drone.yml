@@ -5,7 +5,7 @@ name: default
 
 steps:
 - name: build
-  image: golang
+  image: 3-jdk-8-slim
   commands:
-  - go build
-  - go test
+    - ./mvnw install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+    - ./mvnw test -B
